@@ -451,27 +451,108 @@ footer {
 
 footer .container {
     display: grid;
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
     grid-template-columns: repeat(4, 1fr);
+    
+    padding-top: 11rem;
 }
 
 .widget-title {
+    font-size: 2.4rem;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: var(--primary);
+    margin-bottom: 2.1rem;
+}
+
+.footer-item {
+    margin-bottom: 1.5rem;
+}
+
+.footer-link, .contact-link {
+    position: relative;
+    font-size: 2rem;
+}
+
+.footer-link img {
+    display: inline-block;
+    margin-right: 1rem;
+}
+
+.footer-link::after, .contact-link::after {
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: 0;
+    height: .1rem;
+    width: 0;
+    background-color: var(--primary);
+    transition: .3s;
+}
+
+.footer-link:hover img {
+    filter: invert(52%) sepia(68%) saturate(3421%) hue-rotate(349deg) brightness(99%) contrast(91%);
+}
+
+.footer-link:hover::after, .contact-link:hover::after {
+    width: 100%;
+}
+
+.tag-item {
+    display: inline-block;
+    margin-right: 1.2rem;
+    margin-bottom: 1.2rem;
+    background-color: #444;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.tag-link {
+    display: block;
+    padding: .5rem 1.2rem;
+    transition: .3s;
+}
+
+.tag-link:hover {
     color: var(--primary);
 }
 
-.footer-widget img {
-    display: inline-block;
+.contact-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    align-items: flex-start;
+    margin-bottom: 4.2rem;
+    font-size: 2rem;
+}
+
+.contact-icon {
+    margin-right: 1.5rem;
 }
 
 .footer-bottom {
+    margin-top: 10.7rem;
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
     grid-area: 2/1/-2/-1;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+    color: #777;
+    border-top: .1rem solid #777;
 }
 
-.social-list {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+.social-item {
+    display: inline-block;
+    margin-left: 2.6rem;
+}
+
+.social-link path {
+    transition: .3s;
+}
+
+.social-link:hover path {
+    fill: #fff
 }
