@@ -223,11 +223,14 @@
     <script>
         document.querySelector('.menu-btn').addEventListener('click', function(){
             var menu = document.querySelector('.main-menu');
-            if(menu.style.display = "none"){
-                menu.style.display = "block";
-            }else{
-                menu.style.display = "none";
+            if(menu.classList.contains('menu-open')){
+                console.log('close');
+                menu.classList.remove('menu-open');
+            } else {
+                menu.classList.add('menu-open');
+                console.log('open');
             }
+            
         });
     </script>
 </body>
