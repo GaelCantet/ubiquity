@@ -140,6 +140,33 @@ a {
     background-color: transparent;
 }
 
+ul.slider-list
+{
+    position: absolute;
+    left: 0;
+    bottom: 8rem;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    width: max-content;
+}
+
+.slider-button {
+    padding: 0;
+    border: none;
+    background-color: var(--font-color);
+    height: 1rem;
+    width: 1rem;
+    margin-left: .5rem;
+    margin-right: .5rem;
+    transition: .3s;
+}
+
+.slider-button:hover {
+    background-color: var(--primary);
+}
+
 /*Layout*/
 .container {
     width: 100%;
@@ -265,12 +292,21 @@ a {
   
 /*Hero*/
 .hero {
+    position: relative;
     background-image: url(../img/hero_bg.jpg);
     background-size: cover;
     background-position: center;
     min-height: 96rem;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+}
+
+@media (min-resolution: 144dpi) {
+    .hero {
+        background-image: url(../img/hero_bg.jpg@2x.jpg);
+    }
 }
 
 .hero .container {
@@ -367,6 +403,12 @@ a {
     background-image: url(../img/what_bg.jpg);
     background-size: cover;
     background-position: center;
+}
+
+@media (min-resolution: 144dpi) {
+    .what {
+        background-image: url(../img/what_bg@2x.jpg);
+    }
 }
 
 .what-title{
@@ -493,6 +535,12 @@ a {
     background-position: center;
 }
 
+@media (min-resolution: 144dpi) {
+    .facts {
+        background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)) ,url(../img/facts_bg@2x.jpg);
+    }
+}
+
 .facts .container {
     padding-top: 17rem;
     padding-bottom: 20.2rem;
@@ -542,9 +590,17 @@ a {
     background-size: cover;
     background-position: center;
     color: #fff;
+    position: relative;
+}
+
+@media (min-resolution: 144dpi) {
+    .quotes {
+        background-image: url(../img/quote_bg@2x.jpg);
+    }
 }
 
 .quotes .container {
+    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -562,6 +618,10 @@ a {
 
 .quote-content {
     padding-left: 5rem;
+}
+
+.quotes .slider-button:hover {
+    background-color: #fff;
 }
 
 @media screen and (max-width: 576px) {
