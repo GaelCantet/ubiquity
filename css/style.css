@@ -152,6 +152,12 @@ ul.slider-list
     width: max-content;
 }
 
+@media screen and (max-width: 576px) {
+    ul.slider-list {
+        bottom: 4rem;
+    }
+}
+
 .slider-button {
     padding: 0;
     border: none;
@@ -179,7 +185,7 @@ ul.slider-list
 
 /*header*/
 .main-header {
-    position: sticky;
+    position: fixed;
     top: 0;
     width: 100vw;
     z-index: 1;
@@ -187,7 +193,6 @@ ul.slider-list
 }
 
 .main-header .container {
-    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -238,6 +243,7 @@ ul.slider-list
     padding: 1.5rem 2rem;
     font-size: 1.4rem;
     font-weight: 700;
+    background-color: #fff;
     transition: .3s;
 }
 
@@ -248,7 +254,6 @@ ul.slider-list
 
 @media screen and (max-width: 992px) {
     .main-header .container {
-        display: block;
         padding-top: 0;
         padding-bottom: 0;
     }
@@ -257,6 +262,10 @@ ul.slider-list
         padding-top: 3.5rem;
         padding-bottom: 3.5rem;
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    .logo img {
+        margin-right: 1rem;
     }
 
     .menu-btn {
@@ -269,24 +278,23 @@ ul.slider-list
         transition: .3s;
     }
 
-    .main-menu {
-        position: absolute;
-        bottom: -1;
-        left: 0;
-        right: 0;
-        height: 0;
-        display: none;
+    .menu-item {
+        width: 100%;
     }
 
     .menu-list {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        display: flex;
+        background-color: #fff;
         flex-direction: column;
         justify-content: space-between;
-        background-color:#fff;
     }
 
-    .menu-open {
-        display: block;
-        height: 100%;
+    [hidden] {
+        display: none;
     }
 }
   
@@ -326,7 +334,7 @@ ul.slider-list
 }
 
 .hero-button:first-of-type:hover img {
-    transform: translateX(-1.5rem);
+    transform: translateX(-1.4rem);
 }
 
 .hero-button:last-of-type img {
@@ -334,7 +342,7 @@ ul.slider-list
 }
 
 .hero-button:last-of-type:hover img {
-    transform: translateX(1.5rem);
+    transform: translateX(1.4rem);
 }
 
 .hero-title {
@@ -434,7 +442,6 @@ ul.slider-list
 .posts .container {
     display: grid;
     justify-content: space-between;
-    grid-template-rows: repeat(2, 1fr);
     grid-template-columns: repeat(3, 1fr);
     column-gap: 4rem;
     row-gap: 10rem;
@@ -495,7 +502,7 @@ ul.slider-list
 .post-title {
     font-size: 4rem;
     margin-bottom: 2.9rem;
-    width: max-content;
+    max-width: max-content;
     margin-left: auto;
     margin-right: auto;
 }
@@ -624,7 +631,7 @@ ul.slider-list
     background-color: #fff;
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 768px) {
     .quotes .container {
         flex-direction: column;
         text-align: center;
